@@ -1,6 +1,7 @@
 'use client';
 
 import LibraryItem from '@/components/LibraryItem';
+import LikeButton from '@/components/LikeButton';
 import { Song } from '@/types/types';
 
 interface SearchContentProps {
@@ -21,7 +22,10 @@ const SearchContent = ({ songs }: SearchContentProps) => {
       {songs.map((song) => {
         return (
           <div key={song.id} className="flex items-center gap-x-4 w-full">
-            <LibraryItem data={song} onClick={() => {}} />
+            <div className="flex-1">
+              <LibraryItem data={song} onClick={() => {}} />
+            </div>
+            <LikeButton songId={song.id} />
           </div>
         );
       })}
