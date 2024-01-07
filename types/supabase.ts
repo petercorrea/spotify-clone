@@ -149,7 +149,7 @@ export interface Database {
       };
       songs: {
         Row: {
-          author: string | null;
+          artist: string | null;
           created_at: string;
           id: number;
           image_path: string | null;
@@ -158,7 +158,7 @@ export interface Database {
           user_id: string | null;
         };
         Insert: {
-          author?: string | null;
+          artist?: string | null;
           created_at?: string;
           id?: number;
           image_path?: string | null;
@@ -167,7 +167,7 @@ export interface Database {
           user_id?: string | null;
         };
         Update: {
-          author?: string | null;
+          artist?: string | null;
           created_at?: string;
           id?: number;
           image_path?: string | null;
