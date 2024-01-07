@@ -1,4 +1,7 @@
 'use client';
+import useAuthModal from '@/hooks/useAuthModal';
+import useUploadModal from '@/hooks/useUploadModal';
+import { useUser } from '@/hooks/useUser';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { TbPlaylist } from 'react-icons/tb';
 interface LibraryProps {
@@ -6,8 +9,16 @@ interface LibraryProps {
 }
 
 export default function Library({ children }: LibraryProps) {
+  const authModel = useAuthModal();
+  const uploadModal = useUploadModal();
+  const { user } = useUser();
+
   const onClick = () => {
-    console.log('clicked!');
+    if (!user) {
+      return authModel.onOpen();
+    }
+
+    return uploadModal.onOpen();
   };
 
   const styles = 'flex items-center justify-between px-5 pt-4';
