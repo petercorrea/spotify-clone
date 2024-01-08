@@ -22,6 +22,8 @@ export async function POST(request: Request) {
       email: user?.email || '',
     });
 
+    console.log('inside API POST route', user, customer, getURL());
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       billing_address_collection: 'required',
@@ -41,6 +43,8 @@ export async function POST(request: Request) {
       success_url: `${getURL()}/account`,
       cancel_url: `${getURL()}/`,
     });
+
+    console.log('after create checkout session');
 
     return NextResponse.json({ sessionId: session.id });
   } catch (err: any) {

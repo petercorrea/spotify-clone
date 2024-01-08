@@ -56,7 +56,6 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({ products }) => {
         url: '/api/create-checkout-session',
         data: { price },
       });
-
       console.log('after post');
       const stripe = await getStripe();
       console.log('after stripe');
