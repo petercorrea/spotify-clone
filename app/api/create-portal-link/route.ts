@@ -1,10 +1,9 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
-import { NextResponse } from 'next/server';
-
-import { getURL } from '@/libs/helpers';
 import { stripe } from '@/libs/stripe';
 import { createOrRetrieveCustomer } from '@/libs/supabaseAdmin';
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import STRIPE_RETURN_URL from 'constants';
+import { cookies } from 'next/headers';
+import { NextResponse } from 'next/server';
 
 export async function POST() {
   try {
@@ -25,7 +24,7 @@ export async function POST() {
     if (!customer) throw Error('Could not get customer');
     const { url } = await stripe.billingPortal.sessions.create({
       customer,
-      return_url: `${getURL()}account`,
+      return_url: `${STRIPE_RETURN_URL}account`,
     });
 
     return NextResponse.json({ url });
