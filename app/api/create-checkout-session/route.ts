@@ -40,8 +40,8 @@ export async function POST(request: Request) {
         metadata,
       },
       payment_method_collection: 'if_required',
-      success_url: `${getURL()}/account`,
-      cancel_url: `${getURL()}/`,
+      success_url: `${getURL()}account`,
+      cancel_url: `${getURL()}`,
     });
 
     return NextResponse.json({ sessionId: session.id });
