@@ -29,10 +29,9 @@ const LikeButton = ({ songId }: LikeButtonProps) => {
         .from('liked_songs')
         .select('*')
         .eq('user_id', user.id)
-        .eq('song_id', songId)
-        .single();
+        .eq('song_id', songId);
 
-      if (!error && data) {
+      if (!error && data[0]?.song_id === songId) {
         setIsLiked(true);
       }
     };
