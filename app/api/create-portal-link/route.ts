@@ -1,4 +1,4 @@
-import STRIPE_RETURN_URL from '@/libs/constants';
+import { getURL } from '@/libs/helpers';
 import { stripe } from '@/libs/stripe';
 import { createOrRetrieveCustomer } from '@/libs/supabaseAdmin';
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
@@ -24,7 +24,7 @@ export async function POST() {
     if (!customer) throw Error('Could not get customer');
     const { url } = await stripe.billingPortal.sessions.create({
       customer,
-      return_url: `${STRIPE_RETURN_URL}account`,
+      return_url: `${getURL()}account`,
     });
 
     return NextResponse.json({ url });
