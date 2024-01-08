@@ -1,7 +1,7 @@
+import STRIPE_RETURN_URL from '@/libs/constants';
 import { stripe } from '@/libs/stripe';
 import { createOrRetrieveCustomer } from '@/libs/supabaseAdmin';
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
-import STRIPE_RETURN_URL from 'constants';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
