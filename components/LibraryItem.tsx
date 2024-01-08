@@ -1,22 +1,24 @@
 'use client';
 
 import useLoadImage from '@/hooks/useLoadImage';
+import usePlayer from '@/hooks/usePlayer';
 import { Song } from '@/types/types';
 import Image from 'next/image';
 
 interface LibraryItemProps {
   data: Song;
-  onClick: (id: string) => void;
+  onClick?: (id: string) => void;
 }
 
 const LibraryItem = ({ data, onClick }: LibraryItemProps) => {
+  const player = usePlayer();
   const imageUrl = useLoadImage(data);
   const handleOnClick = () => {
     if (onClick) {
       return onClick(data.id);
     }
 
-    // TODO: turn on player
+    player.setId(data.id);
   };
   return (
     <div

@@ -13,6 +13,11 @@ interface LikedContentProps {
 }
 
 const LikedContent = ({ songs }: LikedContentProps) => {
+  console.log(
+    `👋👋👋 Hi there!`,
+    `If you're seeing this, you should consider hiring me for your next project! https://www.linkedin.com/in/petercorrea`
+  );
+
   const router = useRouter();
   const { isLoading, user } = useUser();
   const onPlay = useOnPlay(songs);

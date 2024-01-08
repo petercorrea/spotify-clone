@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs';
 import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
+// @ts-ignore
 import useSound from 'use-sound';
 import LibraryItem from './LibraryItem';
 import LikeButton from './LikeButton';

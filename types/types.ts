@@ -28,8 +28,8 @@ export interface Price {
   currency?: string;
   type?: Stripe.Price.Type;
   interval?: Stripe.Price.Recurring.Interval;
-  interal_count?: number;
-  trail_period_days?: number | null;
+  interval_count?: number;
+  trial_period_days?: number | null;
   metadata?: Stripe.Metadata;
   products?: Product;
 }
@@ -60,4 +60,8 @@ export interface Song {
   title: string;
   song_path: string;
   image_path: string;
+}
+
+export interface ProductWithPrice extends Product {
+  prices?: Price[];
 }

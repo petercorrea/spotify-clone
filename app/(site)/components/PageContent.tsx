@@ -9,6 +9,11 @@ interface PageContentProps {
 }
 
 const PageContent = ({ songs }: PageContentProps) => {
+  console.log(
+    `👋👋👋 Hi there!`,
+    `If you're seeing this, you should consider hiring me for your next project! https://www.linkedin.com/in/petercorrea`
+  );
+
   const onPlay = useOnPlay(songs);
 
   if (songs.length === 0) {
