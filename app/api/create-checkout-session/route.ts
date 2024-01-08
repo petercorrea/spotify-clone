@@ -44,10 +44,9 @@ export async function POST(request: Request) {
       cancel_url: `${getURL()}/`,
     });
 
-    console.log('after create checkout session');
-
     return NextResponse.json({ sessionId: session.id });
-  } catch (err: any) {
+  } catch (error: any) {
+    console.log(error);
     return new NextResponse('Internal Error', { status: 500 });
   }
 }
