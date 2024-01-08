@@ -38,19 +38,20 @@ export const UserContextProvider = (props: Props) => {
     return supabase.from('users').select('*').single();
   };
   const getSubscription = () => {
-    return supabase
+    let result = supabase
       .from('subscriptions')
       .select('*, prices(*, products(*))')
-      .in('status', ['trialing', 'active'])
-      .single();
+      .in('status', ['trialing', 'active']);
+
+    return result;
   };
 
   useEffect(() => {
     if (user && !isLoadingData && !userDetails && !subscription) {
       setIsLoadingData(true);
 
-      Promise.allSettled([getUserDetails(), getSubscription()]).then(
-        (results) => {
+      Promise.allSettled([getUserDetails(), getSubscription()])
+        .then((results) => {
           const userDetailsPromise = results[0];
           const subscriptionPromise = results[1];
 
@@ -59,12 +60,16 @@ export const UserContextProvider = (props: Props) => {
           }
 
           if (subscriptionPromise.status == 'fulfilled') {
-            setSubscription(subscriptionPromise.value.data as Subscription);
+            setSubscription(
+              subscriptionPromise.value?.data?.[0] as Subscription
+            );
           }
 
           setIsLoadingData(false);
-        }
-      );
+        })
+        .catch((error) => {
+          console.log('error');
+        });
     } else if (!user && !isLoadingUser && !isLoadingData) {
       setUserDetails(null);
       setSubscription(null);

@@ -20,6 +20,7 @@ const SongItem = ({ data, onClick }: SongItemProps) => {
           src={imagePath || '/images/liked.png'}
           fill
           alt="Image"
+          sizes="100vw"
         />
       </div>
       <div className="flex flex-col items-start w-full pt-4 gap-y-1">

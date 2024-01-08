@@ -19,6 +19,7 @@ const Liked = async () => {
                 src="/images/liked.png"
                 alt="Image"
                 className="object-cover"
+                sizes="100vw"
               />
             </div>
             <div className="flex flex-col gap-y-2 mt-4 md:mt-0">
