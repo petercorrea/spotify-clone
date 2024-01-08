@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spotify Clone: Share music with others
 
-## Getting Started
+## Features
 
-First, run the development server:
+✅ Search and play music
+
+✅ Find music uploaded by others
+
+✅ Create your own library
+
+✅ Upload songs and cover art
+
+✅ Like songs
+
+✅ Create an account
+
+✅ Sign in with Github
+
+✅ Magic Link sign in
+
+✅ Password Recovery
+
+✅ Stripe integration
+
+## Signing Up For Premium
+
+To sign up for premium, simply use `4242 4242 4242 4242` as the credit card number and use dummy details for the rest. Everything is on test accounts, so you won't be charged anthing. Cancel anytime. 😂
+
+## Project Details
+
+This project was built using React, Next.js, Tailwind, Supabase, Postgres, Stripe, and Zustand.
+
+## Running Locally
+
+After cloning the repo and installing packages, just run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Live Demo 🚀
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**<https://spotify-clone-nu-virid.vercel.app/>**
 
-## Learn More
+## About Me
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[GitHub](https://www.github.com/petercorrea) -
+[LinkedIn](https://www.linkedin.com/in/petercorrea) -
+[Personal Website](https://www.petercorrea.com) -
+[Email](mailto:contact@petercorrea.com?subject=PeterCorrea.com:%20reaching%20out...)
