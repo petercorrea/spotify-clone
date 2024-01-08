@@ -28,7 +28,7 @@ To sign up for premium, simply use `4242 4242 4242 4242` as the credit card numb
 
 ## Project Details
 
-This project was built using React, Next.js, Tailwind, Supabase, Postgres, Stripe, and Zustand.
+This project was built using React, Next.js, Tailwind, Supabase, Postgres, Stripe, and Zustand. Deployed using Vercel.
 
 ## Running Locally
 
